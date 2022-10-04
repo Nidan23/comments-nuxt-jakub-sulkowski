@@ -18,8 +18,6 @@ export class BackendConnectorService {
   }
 
   async addComment(rawComment: AddCommentModel): Promise<CommentModel> {
-    const comment = JSON.stringify(rawComment)
-
-    return (await axios.post('http://localhost:3000/comments', comment)).data as CommentModel
+    return (await axios.post('http://localhost:3000/comments', rawComment)).data as CommentModel
   }
 }
